@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video Upload and Stream</title>
+</head>
+<body>
+    <h1>Upload a Video File</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+    <h2>Processed Video Stream</h2>
+    <img src="" id="videoFeed" style="border: 1px solid black; width: 640px; height: 480px;">
+    
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            fetch('/', {
+                method: 'post',
+                body: formData,
+            }).then((response) => {
+                document.getElementById('videoFeed').src = URL.createObjectURL(response.body);
+            }).catch((error) => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
