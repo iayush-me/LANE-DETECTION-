@@ -2,7 +2,7 @@
 A COMPUTER VESION PROJECT 
 
 1.Technology & libraries Used -
-                      Python, Flask, Html , CSS
+                      Python, Flask, Html , CSS, JAVASCRIPT,
                       MATPLOT LIB, NumPy.
 2. Worked on Image processing and pattern Recognition. 
 
