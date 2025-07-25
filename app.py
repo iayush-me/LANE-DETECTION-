@@ -66,5 +66,6 @@ def upload_file():
         return render_template('image_render.html', processed_video=os.path.join(app.config['PROCESSED_FOLDER'], processed_filename))
     return render_template('image_render.html')
 
-if __name__ == '__main__':
-    app.run(debug=True, port=8001)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=False)
